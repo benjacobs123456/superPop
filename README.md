@@ -74,4 +74,4 @@ plot_predicted_ancestry(projected_pcs = new_pcs, projected_ancestry = "ancestry_
 
 Which will give you a plot like this:
 
-<img src="https://github.com/benjacobs123456/superPop/blob/master/ancestry_estimates_plot.png" width="500" height="300">
+<img src="https://github.com/benjacobs123456/superPop/blob/master/ancestry_estimates_plot.png" width="1000" height="500">
