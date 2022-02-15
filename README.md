@@ -71,3 +71,6 @@ You can plot these projections, grouped by predicted cluster, with:
 ``` r
 plot_predicted_ancestry(projected_pcs = new_pcs, projected_ancestry = "ancestry_estimates.tsv")
 ```
+
+Which will give you a plot like this:
+![ancestry plot](https://github.com/benjacobs123456/superPop/blob/master/ancestry_estimates_plot.png | width = 200 | height = 100)
