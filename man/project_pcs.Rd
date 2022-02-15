@@ -16,6 +16,8 @@ project_pcs(
 
 \item{out}{a path to the output file}
 
+\item{n_threads}{}
+
 \item{path_to_plink_exe}{the path to your plink2 executable}
 }
 \value{

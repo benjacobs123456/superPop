@@ -4,6 +4,7 @@
 #' @param bfile a plink1 binary fileset containing genotypes for individuals whose ancestral superpopulation you want to estimate.
 #' @param out a path to the output file
 #' @param path_to_plink_exe the path to your plink2 executable
+#' @param n_threads
 #'
 #' @return a '.sscore' file with the projected PC values for individuals in your dataset in 1kg PC space.
 #' @export
@@ -99,6 +100,14 @@ plot_with_1kg = function(projected_pcs = newpcs){
 }
 
 
+#' Title
+#'
+#' @param projected_pcs
+#'
+#' @return
+#' @export
+#'
+#' @examples
 predict_ancestry = function(projected_pcs = newpcs){
 
   # strip _AVG from newpcs name
@@ -113,6 +122,15 @@ predict_ancestry = function(projected_pcs = newpcs){
   return(pred_output)
 }
 
+#' Title
+#'
+#' @param projected_pcs
+#' @param projected_ancestry
+#'
+#' @return
+#' @export
+#'
+#' @examples
 plot_predicted_ancestry = function(projected_pcs = newpcs, projected_ancestry = pred_output){
   # strip _AVG from newpcs name
   colnames(projected_pcs) = stringr::str_remove(colnames(projected_pcs),"_AVG")
@@ -125,6 +143,12 @@ plot_predicted_ancestry = function(projected_pcs = newpcs, projected_ancestry = 
 
 }
 
+#' Title
+#'
+#' @return
+#' @export
+#'
+#' @examples
 compare_1kg_with_predicted_ancestry = function(){
   p1=plot_with_1kg()
   p2=plot_predicted_ancestry()
