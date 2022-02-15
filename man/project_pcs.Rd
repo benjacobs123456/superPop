@@ -2,12 +2,12 @@
 % Please edit documentation in R/functions.R
 \name{project_pcs}
 \alias{project_pcs}
-\title{Project PCs}
+\title{Project UKB individual-level genotypes onto 1kg principal component space}
 \usage{
 project_pcs(
   bfile = "ukb_merged_chroms",
   out = "projected_pcs",
-  n_threads = 10,
+  n_threads = 1,
   path_to_plink_exe = "module unload plink; module load plink/2.0-20200328; plink2 "
 )
 }
@@ -16,7 +16,7 @@ project_pcs(
 
 \item{out}{a path to the output file}
 
-\item{n_threads}{}
+\item{n_threads}{number of computing threads to use, defaults to 1}
 
 \item{path_to_plink_exe}{the path to your plink2 executable}
 }
@@ -24,5 +24,10 @@ project_pcs(
 a '.sscore' file with the projected PC values for individuals in your dataset in 1kg PC space.
 }
 \description{
-Project PCs
+Project UKB individual-level genotypes onto 1kg principal component space
+}
+\examples{
+bfile = "ukb_merged_chroms"
+path_to_plink = "plink.exe"
+project_pcs()
 }

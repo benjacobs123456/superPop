@@ -2,16 +2,29 @@
 % Please edit documentation in R/functions.R
 \name{predict_ancestry}
 \alias{predict_ancestry}
-\title{Title}
+\title{Predict ancestral superpopulation from individual-level PC projections using a pre-trained classifier from 1kg}
 \usage{
-predict_ancestry(projected_pcs = newpcs)
+predict_ancestry(projected_pcs = new_pcs, outfile = "ancestry_estimates")
 }
 \arguments{
-\item{projected_pcs}{}
+\item{projected_pcs}{a data frame with transformed PC scores. Default output from transform_pcs().}
+
+\item{outfile}{a path for the output file}
 }
 \value{
-
+a ".tsv" file with best-guess ancestry estimates for each individual in the dataset
 }
 \description{
-Title
+Predict ancestral superpopulation from individual-level PC projections using a pre-trained classifier from 1kg
+}
+\examples{
+
+# First - project PCs:
+project_pcs(out = "projected_pcs")
+# Then run:
+new_pcs = transform_pcs("projected_pcs.sscore")
+# Then plot with:
+plot_with_1kg(projected_pcs = new_pcs, save_plot = TRUE, outfile = "niceplot")
+# Predict ancestry with:
+predict_ancestry(new_pcs)
 }

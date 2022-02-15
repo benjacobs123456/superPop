@@ -4,14 +4,30 @@
 \alias{plot_with_1kg}
 \title{Title Plot PCs with 1kg reference}
 \usage{
-plot_with_1kg(projected_pcs = newpcs)
+plot_with_1kg(
+  projected_pcs = new_pcs,
+  save_plot = TRUE,
+  outfile = "projected_pcs"
+)
 }
 \arguments{
-\item{projected_pcs}{projected PC scores - a '.sscore' file produced by project_pcs & transformed with transform_pcs}
+\item{projected_pcs}{a data frame with transformed PC scores. Default output from transform_pcs().}
+
+\item{save_plot}{TRUE/FALSE, whether to save the plot to file}
+
+\item{outfile}{the output filename for the plot}
 }
 \value{
 a plot with the new samples projected on 1kg PC space
 }
 \description{
 Title Plot PCs with 1kg reference
+}
+\examples{
+# First - project PCs:
+project_pcs(out = "projected_pcs")
+# Then run:
+new_pcs = transform_pcs("projected_pcs.sscore")
+# Then plot with:
+plot_with_1kg(projected_pcs = new_pcs, save_plot = TRUE, outfile = "niceplot")
 }

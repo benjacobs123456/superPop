@@ -7,11 +7,18 @@
 transform_pcs(projected_pcs = "projected_pcs.sscore")
 }
 \arguments{
-\item{projected_pcs}{}
+\item{projected_pcs}{transformed PC scores on the same co-ordinates as the 1kg reference samples. Default output from project_pcs().}
 }
 \value{
-transformed PC scores on the same co-ordinates as the 1kg reference samples
+A data frame with raw PC scores on the same co-ordinates as the 1kg reference samples. Default output from project_pcs().
 }
 \description{
 Transform projected PCs onto 1kg scale
+}
+\examples{
+
+# First - project PCs:
+project_pcs(out = "projected_pcs")
+# Then run:
+new_pcs = transform_pcs("projected_pcs.sscore")
 }
